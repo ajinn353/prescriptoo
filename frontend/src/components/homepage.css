@@ -1,0 +1,896 @@
+.container {
+    font-family: outfit;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.header {
+    margin: 0px 39px;
+
+}
+.dropdown-menu {
+    padding: 0 !important;
+    margin-top: 33px !important;
+}
+
+.dropdown-item {
+    font-family: outfit;
+    line-height: 24px;
+    padding: 8px 12px;
+    background: #F9FAFB;
+    border-radius: 4px;
+}
+
+
+.doctorlist{
+    margin: 16px 26px;
+
+}
+
+.logo-img {
+    width: 179px;
+    height: auto;
+    margin: 10
+}
+
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+    font-weight: 20;
+  }
+  
+  .nav-link.active-link {
+    font-weight: bold;
+  }
+  
+  .nav-link.active-link::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -3px;
+    width: 50%;
+    height: 2px;
+    background-color: #007bff;
+  
+  }
+
+.a1 {
+    background-color: #5F6FFF;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 64px 40px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 80px;
+
+}
+
+.a2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    height: auto;
+    padding: 100px 0px;
+}
+
+.txt {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: left;
+    align-items: center;
+}
+
+.a3 {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.a3 img {
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+    display: block;
+}
+
+.a4 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.groupprofile{
+    width: 100%;
+    height: auto;
+    max-width: 130px;
+}
+
+.txt-sm {
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-top: 10px;
+
+}
+
+.appointmentbtn {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    width: 206px;
+    text-decoration: none;
+    color: #5E5C59;
+    padding: 12px 34px 12px 34px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    gap: 5px;
+    transition: all 0.3s ease-out;
+}
+
+.appointmentbtn:hover {
+    transform: scale(1.05);
+}
+.w-3 {
+    width: 12px;
+}
+
+.speciality {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 64px 0px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.diff {
+    display: flex;
+    flex-direction: column;
+    line-height: 16px;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: black;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.diff:hover {
+    transform: translateY(-8px); /* Moves up by 10px on hover */
+}
+
+.w-4 {
+    width: 95px;
+}
+
+.text-3xl {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px !important;
+
+}
+
+.text-sm {
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.topdoc {
+    display: flex;
+    flex-direction: column;
+    margin: 64px 40px 64px 40px;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctors {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 20px;
+
+}
+
+.card {
+    display: grid;
+    grid-column: auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+
+}
+
+.card:hover {
+    transform: translateY(-8px); /* Moves up by 10px on hover */
+}
+
+.card-img-top {
+    background-color: #EAEFFF;
+    width: 100%
+    
+}
+
+.card-body {
+    padding: 14px !important;
+    font-size: 14px;
+}
+
+.w-2 {
+    display: flex;
+    color: #22C55E;
+    gap: 8px !important;
+    align-items: center;
+
+}
+
+p {
+    margin: 0;
+}
+
+.roundedfull {
+    display: flex;
+    background-color: #22C55E;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 9999px;
+}
+.cardimg{
+    min-width: 208px;
+}
+
+
+.card-title {
+    font-size: 18px;
+    line-height: 19px;
+}
+
+.card-text {
+    color: #5E5C59;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    background-color: #EAEFFF;
+    color: #4B5563;
+    text-decoration: none;
+    padding: 12px 48px 12px 48px;
+    border-radius: 100px;
+    font-size: 16px;
+    margin-top: 40px;
+    border: none;
+}
+
+.accountbtn {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    width: 162px;
+    text-decoration: none;
+    color: #5E5C59;
+    padding: 12px 32px 12px 32px;
+    border-radius: 50px;
+    font-size: 14px;
+    gap: 5px;
+    margin-top: 20px;
+    border: none;
+    transition: all 0.3s ease-out;
+}
+
+.accountbtn:hover {
+    transform: scale(1.05);
+}
+
+.createaccount {
+    background-color: #5F6FFF;
+    min-width: 400px;
+    margin: 64px 80px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.appoint {
+    max-width: 100%;
+    width: 400px;
+}
+
+.appoint img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    display: block;
+}
+
+.lg {
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+.aboutt{
+    margin: 0px 39px;
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+    font-size: 24PX;
+    color: #707070;
+ 
+}
+.aboutus{
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    color:#4A4A4A;
+    font-weight: 600;
+}
+.aboutdata{
+    margin: 40px ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:48px;
+
+}
+
+.aboutimg img{
+    width: 100%;
+    height: auto;
+
+}
+.aboutpara{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    width:50%;
+    max-width: 600px;
+    font-size:14px;
+    color: #5E5C59 ;
+    padding-top: 30px;
+    
+}
+.choose{
+    margin: 14px 39px;
+ 
+
+}
+.why{
+   font-size: 20px;
+   color: #000;
+   margin:14px 0px
+}
+.chooseus{
+    font-weight: 600;
+    color: #374151;
+}
+.feature-box {
+    border: 1px solid #ddd;
+    padding: 60px;
+    text-align: start;
+    color:  rgb(75 85 99 );
+    font-size: 15px;
+}
+.feature-box:hover{
+    background-color: #5F6FFF;
+    color: #FFFFFF;
+    transition-duration: .3s;
+}
+.feature-title {
+    font-weight: bold;
+}
+.contact{
+    align-items: center;
+    padding-top: 45px;
+    color: #707070;
+    font-size: 24px;
+}
+.contactus{
+    color:#4A4A4A;
+    font-weight: 600;
+}
+.contactdetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .contactimage {
+    flex: 1; 
+    min-width: 300px;
+    text-align: end;
+  }
+  
+  .contactimg {
+    max-width: 100%; 
+    height: auto;
+  }
+  .contactinform{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    height: auto;
+    padding-top: 20px;
+    gap: 24px; 
+    flex: 1; /* Takes available space */
+    min-width: 300px;
+}
+  
+.office{
+    font-size: 18px;
+    color: #4B5563;
+    font-weight: 600;
+}
+.job{
+    padding: 16px 32px;
+    font-size: 14px;
+    line-height: 20px;
+    border: solid 0.5px #000;
+    background: #FFFFFF;
+}
+.job:hover{
+    background: #000;
+    color: #FFFFFF;
+    transition-duration: 0.5s;
+}
+.contacttxt{
+    font-size: 14px;
+    color: #6b7280;
+}
+.docdetails{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0px 29px;
+
+}
+.docdet{
+    padding: 27px 27px;
+  
+}
+
+.img-fluid{
+    max-width: 17rem; 
+
+
+}
+.docimg{
+    min-width: 17rem; 
+
+}
+.doctorname{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #374151;
+    
+}
+.verified img{
+ width: 20px;
+ font-size: small;
+}
+.year{
+    border-radius: 9999px;
+    font-size: 12px;
+    color:#4B5563;
+    background-color: transparent;
+    border: .5px solid #e5e7eb;
+    padding: 2px 15px;
+}
+.about{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.details{
+    font-size: 14px;
+    line-height: 20px;
+}
+.apointfee{
+    font-size: 16px;
+    color: #4B5563;
+    margin-top: 14px;
+    font-weight: 500;
+}
+
+.date-btn {
+    padding: 24px 0px;
+    width: 65px;
+    border-radius: 9999px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 16px;
+    color: #565656;
+    font-weight: 500;
+
+}
+.date-btn.active {
+    background-color: #5F6FFF;
+    color: white;
+    border: none;
+}
+
+.appointment-btn {
+    background-color: #5F6FFF;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 80px;
+    border: none;
+    font-size: 14px;
+    line-height: 20px;
+}
+.time-slot-container {
+    max-width: 100%;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    padding: 5px 0;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.time-slot-wrapper {
+    display: flex;
+    gap: 10px; 
+}
+
+.time-slot-container::-webkit-scrollbar {
+    display: none;
+}
+
+.time-btn {
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: white;
+    color: #949494;;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+.time-btn.active {
+    background-color: #5F6FFF;
+    color: white;
+    border: none;
+}
+.booking{
+    margin: 0px 24px 0px 334px;
+}
+.slot{
+    font-size: 16px;
+    color: #565656;
+    font-weight: 500;
+
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 39px;
+
+}
+.profiledetails{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding-top: 20px;
+}
+.profiledetails img{
+    width:144px;
+    max-width: 100%;
+    height: auto;
+}
+.profilename{
+    font-size: 30px;
+    font-weight: 500;
+    color:#262626
+}
+.contactinf{
+    font-size: 14px;
+    color: #4b5563;
+}
+.address{
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(3, 25px); 
+    gap: 10px;
+    width: 255px;
+    font-size: 14px;
+    font-weight: 500;
+    
+   
+}
+.textblue{
+   font-weight: normal; 
+   color: #007bff;
+}
+.textgray{
+    font-weight: normal;
+    color: #6b7280;
+}
+.basicinf{
+    color: #6b7280;
+    font-size: 14px;
+
+}
+.basicdetails{
+    display: grid;
+    grid-template-columns: repeat(2,3fr);
+    grid-template-rows: repeat(2,25px);
+    gap: 10px;
+    width: 255px;
+    color: #6b7280;
+    font-size: 14px;
+    padding-top: 14px;
+
+}
+.basictext{
+    font-weight: 500;
+    color: #4b5563;
+}
+.editbtn{
+    padding:8px 32px;
+    border-radius: 9999px;
+    width: 90px;
+    background: transparent;
+    border :.5px solid #5F6FFF;
+    font-size: 14px;
+
+}
+.editbtn:hover{
+    background-color: #5F6FFF;
+    color:#FFFFFF
+}
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    margin: 20px 39px 0px 39px;
+
+}
+.loginform{
+    display: flex;
+    flex-direction: column;
+    min-width: 384px;
+    padding: 32px;
+    gap:12px;
+    align-items: flex-start;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 
+            0px 2px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #5E5E5E;
+    height: auto;
+
+}
+.inputvalue{
+    width: 100%;
+    border-radius: 4px;
+    border:1px solid #dadada;
+    padding: 6px;
+    margin-top: 4px;
+}
+.w-full{
+    width: 100%;
+}
+.createacc{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.createaccbtn{
+    border-radius: 4px;
+    background-color: #5F6FFF;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+}
+.myappoiment{
+    margin: 46px 39px;
+}
+.appointments{
+    font-size:18px ;
+    font-weight: 500;
+    color: #4b5563;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F1F2F4;
+}
+.paybtn{
+    color:#696969;
+    border:1px solid #E5E7EB;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 8px 0px;
+}
+.paybtn:hover{
+    color:#ffffff;
+    background: #5F6FFF;
+
+}
+
+.cancelbtn{
+    color:#696969;
+    border:1px solid #E5E7EB;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 8px 25px;
+    
+}
+.cancelbtn:hover{
+    color:#ffffff;
+    background: #DC2626;
+}
+.create{
+    background-color: #5F6FFF;
+    border-radius: 9999px;
+    border: none;
+    color: #ffffff;
+    padding:12px 32px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.specialitybrowse{
+    margin: 15px 10px;
+    color: #4B5563;
+    opacity: 1;
+
+}
+.footer {
+    background-color: #ffffff;
+    margin: 160px 80px 20px 80px;
+}
+
+.ftxt {
+    font-size: 14px;
+    color: #666;
+}
+
+
+.footer-text {
+    font-size: 14px;
+    color: #666;
+    max-width: 400px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+@media (min-width: 1200px) {
+    .aboutimg img {
+        max-width: 360px; 
+    }
+    .contactimage img{
+        max-width: 360px; 
+    }
+    .contactdetails{
+        margin-bottom: 112px;
+    }
+}
+
+@media (max-width: 768px) {
+    .a1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .groupprofile{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .txt {
+        font-size: 2rem;
+        text-align: center;
+
+    }
+
+    .a4 {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .appointmentbtn{
+        text-align: center;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .a3 {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .aboutpara{
+      width: 100% !important; 
+    }
+   
+    .contactdetails {
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .contactimage, .contactinform {
+        width: 100%; 
+    }
+    .booking{
+        margin: 0px 24px 0px 29px;;
+    }
+}
+
+@media (max-width: 480px) {
+    .txt {
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+
+    .a2 {
+        margin: 10px;
+        
+    }
+
+    .a3 {
+        width: 100%;
+    }
+
+    .a4 {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .appointmentbtn{
+        text-align: center;
+        justify-content: center;
+        padding-top: 20px;
+    }
+}
