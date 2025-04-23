@@ -82,13 +82,12 @@ function Appointment() {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
-    })    .then((data)=>{
+    })
+    .then((data)=>{
       setDoctors(data)
-      
     })
     .catch((error)=>{
-      console.error("Error fetching doctor:",error);
-      
+      console.error("Error fetching doctor:",error); 
     });
   },[id])
 
