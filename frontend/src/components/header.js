@@ -6,7 +6,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [islogin,setIsLogin] = useState(false)
   const [images ,setImages] = useState([]);
   const location = useLocation();
@@ -103,8 +102,7 @@ function Header() {
         <div className="d-flex align-items-center gap-3">
           <div
             className="dropdown"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+       
           >
             <div className="dropdown">
               <button className="btn dropdown-toggle border-0 p-0" type="button" id="userDropdown" data-bs-toggle="dropdown">
