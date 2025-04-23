@@ -5,7 +5,6 @@ import Footer from './footer';
 function Myappointment() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [canceledAppointments, setCanceledAppointments] = useState({});
 
 
   useEffect(() => {
