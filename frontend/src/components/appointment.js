@@ -36,7 +36,7 @@ function Appointment() {
     if (!selectedDate && dates.length > 0) {
       setSelectedDate(dates[0].fullDate); 
     }
-  }, [dates]); 
+  }, [dates,selectedDate]); 
 
   useEffect(() => {
     generateTimeSlots();
