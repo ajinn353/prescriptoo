@@ -127,6 +127,7 @@ function Profile() {
                     ? `data:${profile.image.contentType};base64,${profile.image.data}`
                     : images.profile)
                 }
+                alt="User Profile"
               />
 
               <input
