@@ -20,7 +20,7 @@ function Homepage() {
     setLoading(true);
     setIsLogin(localStorage.getItem("islogin") === "true");
   
-    async function fetchData() {
+ const fetchData = async()=> {
       try {
         const doctorRes = await fetch('http://localhost:3300/api/doctors');
         const doctorData = await doctorRes.json();
@@ -73,7 +73,7 @@ function Homepage() {
             </div>
             <button onClick={() => document.getElementById('speciality').scrollIntoView({ behavior: 'smooth' })}
               className='appointmentbtn mt-3'>Book Appoinments
-              <img src={assets.arrow} className='w-3'></img>
+              <img src={assets.arrow} className='w-3' alt="arrow"></img>
             </button>
           </div>
           <div className='a3 ' style={{ paddingTop: 30 }}>
