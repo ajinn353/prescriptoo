@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './homepage.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -6,27 +6,27 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [islogin,setIsLogin] = useState(false)
-  const [images ,setImages] = useState([]);
+  const [islogin, setIsLogin] = useState(false)
+  const [images, setImages] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsLogin(localStorage.getItem("islogin") === "true");
-    
-    const filename =["prescript.svg","profile.png"]
+
+    const filename = ["prescript.svg", "profile.png"]
 
     const imageMap = {};
     filename.forEach((file) => {
       const name = file.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
       imageMap[name] = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
     });
-   
+
     setImages(imageMap);
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("islogin"); 
+    localStorage.removeItem("islogin");
     setIsLogin(false);
     navigate("/login");
   };
@@ -37,7 +37,7 @@ function Header() {
 
         {/* Brand Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src= {images.prescript} alt="Prescripto Logo" className="logo-img me-2" style={{ height: "40px" }} />
+          <img src={images.prescript} alt="Prescripto Logo" className="logo-img me-2" style={{ height: "40px" }} />
         </Link>
 
         {/* Custom Toggler Button */}
@@ -97,34 +97,62 @@ function Header() {
 
           </div>
         </div>
-        
-        {islogin ?(
-        <div className="d-flex align-items-center gap-3">
-          <div
-            className="dropdown"
-<<<<<<< HEAD
-       
-=======
 
->>>>>>> 75d3535 (Update API URL, appointment booking, and env config)
-          >
+        {islogin ? (
+          <div className="d-flex align-items-center gap-3">
             <div className="dropdown">
-              <button className="btn dropdown-toggle border-0 p-0" type="button" id="userDropdown" data-bs-toggle="dropdown">
-                <img src= {images.profile} alt="User Profile" className="rounded-circle" style={{ width: "32px", height: "32px", backgroundColor: "#F0F0FF", cursor: "pointer" }} />
+              <button
+                className="btn dropdown-toggle border-0 p-0"
+                type="button"
+                id="userDropdown"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  src={images.profile}
+                  alt="User Profile"
+                  className="rounded-circle"
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#F0F0FF",
+                    cursor: "pointer",
+                  }}
+                />
               </button>
-              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                <li><button className="dropdown-item" onClick={() => navigate('/profile')}> My Profile</button></li>
-                <li><button className="dropdown-item" onClick={() => navigate('/myappointment')}>My Appointments</button></li>
-                <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
+              <ul
+                className="dropdown-menu dropdown-menu-end"
+                aria-labelledby="userDropdown"
+              >
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => navigate("/profile")}
+                  >
+                    My Profile
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={() => navigate("/myappointment")}
+                  >
+                    My Appointments
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
-        </div>
-        ):(
+        ) : (
           <>
-          <button className=' create' onClick={() => navigate("/login")}>create account</button>
+            <button className="create" onClick={() => navigate("/login")}>
+              create account
+            </button>
           </>
-
         )}
 
       </nav>
