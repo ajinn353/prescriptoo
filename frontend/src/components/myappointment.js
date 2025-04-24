@@ -22,12 +22,12 @@ function Myappointment() {
       return;
     }
   
-    fetch(`http://localhost:3300/api/book-appointment/${loggedInUserId}`)
+    fetch(`https://prescriptoo-xhav.onrender.com/api/book-appointment/${loggedInUserId}`)
       .then((response) => response.json())
       .then(async (data) => {
         const detailedAppointments = await Promise.all(
           data.map(async (appointment) => {
-            const doctorResponse = await fetch(`http://localhost:3300/api/doctors/${appointment.doctorId}`);
+            const doctorResponse = await fetch(`https://prescriptoo-xhav.onrender.com/api/doctors/${appointment.doctorId}`);
             const doctorData = await doctorResponse.json();
             return {
               ...appointment,
@@ -45,7 +45,7 @@ function Myappointment() {
 
   const handleCancel = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3300/api/book-appointment/${id}`, {
+      const response = await fetch(`https://prescriptoo-xhav.onrender.com/api/book-appointment/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });  

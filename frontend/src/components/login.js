@@ -18,7 +18,7 @@ function Login() {
   const handlesubmit = async (e) => {
     e.preventDefault();
 
-    let endpoint = "http://localhost:3300/api/user";
+    let endpoint = "https://prescriptoo-xhav.onrender.com/api/user";
 
     let formdata = isLogin
         ? { action: "login", email: loginEmailRef.current.value, password: loginPasswordRef.current.value }

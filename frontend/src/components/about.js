@@ -9,7 +9,7 @@ function About() {
   useEffect(() => {
     const filename = "aboutimage.png";
     const name = filename.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-    const imageUrl = `http://localhost:3300/api/assets/${name}`;
+    const imageUrl = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
     
     setImages({ [name]: imageUrl });
   }

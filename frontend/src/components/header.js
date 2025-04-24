@@ -19,7 +19,7 @@ function Header() {
     const imageMap = {};
     filename.forEach((file) => {
       const name = file.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-      imageMap[name] = `http://localhost:3300/api/assets/${name}`;
+      imageMap[name] = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
     });
    
     setImages(imageMap);
@@ -102,7 +102,11 @@ function Header() {
         <div className="d-flex align-items-center gap-3">
           <div
             className="dropdown"
+<<<<<<< HEAD
        
+=======
+
+>>>>>>> 75d3535 (Update API URL, appointment booking, and env config)
           >
             <div className="dropdown">
               <button className="btn dropdown-toggle border-0 p-0" type="button" id="userDropdown" data-bs-toggle="dropdown">

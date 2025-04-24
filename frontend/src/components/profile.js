@@ -68,7 +68,7 @@ function Profile() {
     }
 
     try {
-      const res = await fetch("http://localhost:3300/api/user", {
+      const res = await fetch("https://prescriptoo-xhav.onrender.com/api/user", {
         method: "POST", // keep POST for multipart/form-data
         body: formData,
       });

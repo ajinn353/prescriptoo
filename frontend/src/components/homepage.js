@@ -22,17 +22,17 @@ function Homepage() {
   
  const fetchData = async()=> {
       try {
-        const doctorRes = await fetch('http://localhost:3300/api/doctors');
+        const doctorRes = await fetch('https://prescriptoo-xhav.onrender.com/api/doctors');
         const doctorData = await doctorRes.json();
         setDoctors(doctorData || []);
   
-        const assetRes = await fetch('http://localhost:3300/api/assets');
+        const assetRes = await fetch('https://prescriptoo-xhav.onrender.com/api/assets');
         const assetList = await assetRes.json();
   
         const assetMap = {};
         for (const asset of assetList) {
           const filename = asset.name.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-          const imgRes = await fetch(`http://localhost:3300/api/assets/${filename}`);
+          const imgRes = await fetch(`https://prescriptoo-xhav.onrender.com/api/assets/${filename}`);
           if (!imgRes.ok) {
             console.error(`Image ${filename} failed to load`);
             continue;

@@ -76,7 +76,7 @@ function Appointment() {
   };
 
   useEffect (()=>{
-    fetch(`http://localhost:3300/api/doctors/${id}`)
+    fetch(`https://prescriptoo-xhav.onrender.com/api/doctors/${id}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -118,7 +118,7 @@ function Appointment() {
     };
   
     try {
-      const response = await fetch("http://localhost:3300/api/book-appointment", {
+      const response = await fetch("https://prescriptoo-xhav.onrender.com/api/book-appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),
@@ -140,7 +140,7 @@ function Appointment() {
     useEffect(() => {
       const filename = "verified.svg";
       const name = filename.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-      const imageUrl = `http://localhost:3300/api/assets/${name}`;
+      const imageUrl = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
       
       setImages({ [name]: imageUrl });
     }, []);
