@@ -20,15 +20,15 @@ function Homepage() {
     setLoading(true);
     setIsLogin(localStorage.getItem("islogin") === "true");
   
- const fetchData = async()=> {
+    const fetchData = async () => {
       try {
         const doctorRes = await fetch('https://prescriptoo-xhav.onrender.com/api/doctors');
         const doctorData = await doctorRes.json();
         setDoctors(doctorData || []);
-  
+    
         const assetRes = await fetch('https://prescriptoo-xhav.onrender.com/api/assets');
         const assetList = await assetRes.json();
-  
+    
         const assetMap = {};
         for (const asset of assetList) {
           const filename = asset.name.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
@@ -37,19 +37,20 @@ function Homepage() {
             console.error(`Image ${filename} failed to load`);
             continue;
           }
-  
+    
           const blob = await imgRes.blob();
           const url = URL.createObjectURL(blob);
           assetMap[filename] = url;
         }
-  
+    
         setAssets(assetMap);
       } catch (error) {
-        console.error("Error fetching asset data:", error);
+        console.error("Error fetching asset data:", error);  // Log full error details
       } finally {
         setLoading(false);
       }
     }
+    
   
     fetchData();
   }, []);

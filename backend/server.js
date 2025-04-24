@@ -8,10 +8,14 @@ const app = express()
 app.use(express.json())
 
 app.use(cors({
-    origin: 'https://prescriptoo-frontend.onrender.com',
-    methods: ["GET", "POST","PUT","DELETE"],
+    origin: [
+      'https://prescriptoo-frontend.onrender.com',
+      'https://prescriptoo-xhav.onrender.com' 
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"]
-}));
+  }));
+  
 
 app.use('/api',Routing)
 
