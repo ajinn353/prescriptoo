@@ -23,7 +23,7 @@ function Profile() {
       return;
     }
 
-    fetch("http://localhost:3300/api/user", {
+    fetch("https://prescriptoo-xhav.onrender.com/api/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ action: "getData", userId: storedUser._id }),
