@@ -28,13 +28,18 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    const userId = JSON.parse(localStorage.getItem('user') || '{}')?.user?._id;
-    
-    if (!userId) {
-      console.warn('No user ID in localStorage');
+    const storedUser = localStorage.getItem('user');
+  
+    if (!storedUser) {
+      console.warn('No user object in localStorage');
       return;
     }
-
+  
+    const parsedUser = JSON.parse(storedUser);
+  
+    // Access the user data
+    const userId = parsedUser?._id;
+    console.log(userId); 
     fetch("https://prescriptoo-xhav.onrender.com/api/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -53,10 +58,8 @@ function Header() {
         console.error('Error fetching user:', err);
         setUserImage(images.profile);
       });
-  }, [images.profile]);
-
-
-
+  }, []); // Empty dependency array
+  
 
   const handleLogout = () => {
     localStorage.removeItem("islogin");
