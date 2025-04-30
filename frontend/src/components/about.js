@@ -18,15 +18,15 @@ function About() {
   return (
     <div className='container'>
       <Header />
-      <div class="text-center aboutt">
-        <p>ABOUT <span className=" aboutus">US</span></p>
+      <div className="text-center aboutt">
+        <p>ABOUT <span className="aboutus">US</span></p>
       </div>
 
-      <div className='aboutdata'>
-        <div className='aboutimg'>
-          <img src= {images.aboutimage} alt='about_img'></img>
+      <div className='row aboutdata'>
+        <div className='col-md-5 aboutimg'>
+          <img src={images.aboutimage} alt='about_img' ></img>
         </div>
-        <div className='aboutpara'>
+        <div className='col-md-7 aboutpara'>
           <p>Welcome to Prescripto, your trusted partner in managing your healthcare needs conveniently and efficiently. At Prescripto,
             we understand the challenges individuals face when it comes to scheduling doctor appointments and managing their health records.</p>
           <p>Prescripto is committed to excellence in healthcare technology. We continuously strive to enhance our platform, integrating the latest advancements to improve user experience and deliver superior service.
@@ -38,24 +38,24 @@ function About() {
       </div>
 
       <div className='choose'>
-        <p className='why'>WHY<span className=" chooseus">&nbsp;CHOOSE US</span></p>
+        <p className='why'>WHY<span className="chooseus">&nbsp;CHOOSE US</span></p>
 
-        <div class="row text-center g-0">
-          <div class="col-md-4 d-flex">
-            <div class="feature-box">
-              <p class="feature-title">EFFICIENCY:</p><br/>
+        <div className="row text-center g-3">
+          <div className="col-md-4 d-flex">
+            <div className="feature-box w-100">
+              <p className="feature-title">EFFICIENCY:</p><br />
               <p>Streamlined appointment scheduling that fits into your busy lifestyle.</p>
             </div>
           </div>
-          <div class="col-md-4 d-flex">
-            <div class="feature-box">
-              <p class="feature-title">CONVENIENCE:</p><br/>
+          <div className="col-md-4 d-flex">
+            <div className="feature-box w-100">
+              <p className="feature-title">CONVENIENCE:</p><br />
               <p>Access to a network of trusted healthcare professionals in your area.</p>
             </div>
           </div>
-          <div class="col-md-4 d-flex">
-            <div class="feature-box">
-              <p class="feature-title">PERSONALIZATION:</p><br/>
+          <div className="col-md-4 d-flex">
+            <div className="feature-box w-100">
+              <p className="feature-title">PERSONALIZATION:</p><br />
               <p>Tailored recommendations and reminders to help you stay on top of your health.</p>
             </div>
           </div>

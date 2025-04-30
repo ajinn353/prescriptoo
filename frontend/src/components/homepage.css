@@ -8,6 +8,7 @@
     margin: 0px 39px;
 
 }
+
 .dropdown-menu {
     padding: 0 !important;
     margin-top: 33px !important;
@@ -22,7 +23,7 @@
 }
 
 
-.doctorlist{
+.doctorlist {
     margin: 16px 26px;
 
 }
@@ -40,13 +41,13 @@
     color: #000;
     font-weight: bolder;
     font-weight: 20;
-  }
-  
-  .nav-link.active-link {
+}
+
+.nav-link.active-link {
     font-weight: bold;
-  }
-  
-  .nav-link.active-link::after {
+}
+
+.nav-link.active-link::after {
     content: "";
     position: absolute;
     left: 25%;
@@ -54,8 +55,8 @@
     width: 50%;
     height: 2px;
     background-color: #007bff;
-  
-  }
+
+}
 
 .a1 {
     background-color: #5F6FFF;
@@ -77,7 +78,7 @@
     flex-direction: column;
     max-width: 600px;
     height: auto;
-    padding: 100px 0px;
+    padding: 30px 0px;
 }
 
 .txt {
@@ -105,9 +106,11 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
 }
-.groupprofile{
-    width: 100%;
+
+.groupprofile {
+    /* width: 100%; */
     height: auto;
     max-width: 130px;
 }
@@ -120,24 +123,31 @@
 
 }
 
+.appointt {
+    padding: 0px 40px;
+}
+
 .appointmentbtn {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: #FFFFFF;
-    width: 206px;
+    width: 100%;
+    max-width: 210px;
     text-decoration: none;
     color: #5E5C59;
-    padding: 12px 34px 12px 34px;
+    padding: 12px 34px;
     border-radius: 50px;
     border: none;
     font-size: 14px;
     gap: 5px;
     transition: all 0.3s ease-out;
-}
+  }
 
 .appointmentbtn:hover {
     transform: scale(1.05);
 }
+
 .w-3 {
     width: 12px;
 }
@@ -145,21 +155,50 @@
 .speciality {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 0px 0px 64px 0px;
+    margin: 0px 36px;
 }
 
-.category {
+/* .category {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     padding-top: 20px;
-    width: 100%;
+} */
+.category-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
 }
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.category-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.category-wrapper>div {
+    flex: 0 0 auto;
+    /* Prevent wrapping */
+    width: 140px;
+    /* or whatever fixed width works for your card */
+}
+
+
 
 .diff {
     display: flex;
@@ -174,11 +213,13 @@
     background: none;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition */
 }
 
 .diff:hover {
-    transform: translateY(-8px); /* Moves up by 10px on hover */
+    transform: translateY(-8px);
+    /* Moves up by 10px on hover */
 }
 
 .w-4 {
@@ -212,30 +253,34 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 10px;
     padding-top: 20px;
-
 }
 
+
+
 .card {
-    display: grid;
-    grid-column: auto;
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    /* display: grid;
+    grid-column: auto; */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition */
 
 }
 
 .card:hover {
-    transform: translateY(-8px); /* Moves up by 10px on hover */
+    transform: translateY(-8px);
+    /* Moves up by 10px on hover */
 }
 
 .card-img-top {
     background-color: #EAEFFF;
-    width: 100%
-    
+    width: 100%;
+    object-fit: cover !important;
+
 }
 
 .card-body {
-    padding: 14px !important;
+    padding: 20px 5px !important;
     font-size: 14px;
 }
 
@@ -258,7 +303,8 @@ p {
     height: .5rem;
     border-radius: 9999px;
 }
-.cardimg{
+
+.cardimg {
     min-width: 208px;
 }
 
@@ -309,8 +355,7 @@ p {
 
 .createaccount {
     background-color: #5F6FFF;
-    min-width: 400px;
-    margin: 64px 80px;
+    margin: 64px 64px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -318,6 +363,7 @@ p {
     gap: 50px;
     flex-wrap: wrap;
     position: relative;
+    padding: 0px 20px;
 }
 
 .appoint {
@@ -337,190 +383,216 @@ p {
     line-height: 1.3;
 }
 
-.aboutt{
+.aboutt {
     margin: 0px 39px;
     display: flex;
     justify-content: center;
     padding-top: 45px;
     font-size: 24PX;
     color: #707070;
- 
+
 }
-.aboutus{
+
+.aboutus {
     font-size: 24px;
     justify-content: center;
     align-items: center;
-    color:#4A4A4A;
+    color: #4A4A4A;
     font-weight: 600;
 }
-.aboutdata{
-    margin: 40px ;
+
+.aboutdata {
+    margin: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap:48px;
+    gap: 48px;
 
 }
 
-.aboutimg img{
+.aboutimg img {
     width: 100%;
     height: auto;
 
 }
-.aboutpara{
+
+.aboutpara {
     display: flex;
     flex-direction: column;
-    gap:24px;
-    width:50%;
+    gap: 24px;
+    width: 50%;
     max-width: 600px;
-    font-size:14px;
-    color: #5E5C59 ;
+    font-size: 14px;
+    color: #5E5C59;
     padding-top: 30px;
-    
-}
-.choose{
-    margin: 14px 39px;
- 
 
 }
-.why{
-   font-size: 20px;
-   color: #000;
-   margin:14px 0px
+
+.choose {
+    margin: 14px 39px;
+
+
 }
-.chooseus{
+
+.why {
+    font-size: 20px;
+    color: #000;
+    margin: 14px 0px
+}
+
+.chooseus {
     font-weight: 600;
     color: #374151;
 }
+
 .feature-box {
     border: 1px solid #ddd;
     padding: 60px;
     text-align: start;
-    color:  rgb(75 85 99 );
+    color: rgb(75 85 99);
     font-size: 15px;
 }
-.feature-box:hover{
+
+.feature-box:hover {
     background-color: #5F6FFF;
     color: #FFFFFF;
     transition-duration: .3s;
 }
+
 .feature-title {
     font-weight: bold;
 }
-.contact{
+
+.contact {
     align-items: center;
     padding-top: 45px;
     color: #707070;
     font-size: 24px;
 }
-.contactus{
-    color:#4A4A4A;
+
+.contactus {
+    color: #4A4A4A;
     font-weight: 600;
 }
+
 .contactdetails {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 40px;
     margin-bottom: 40px;
-  }
-  
-  .contactimage {
-    flex: 1; 
+}
+
+.contactimage {
+    flex: 1;
     min-width: 300px;
     text-align: end;
-  }
-  
-  .contactimg {
-    max-width: 100%; 
+}
+
+.contactimg {
+    max-width: 100%;
     height: auto;
-  }
-  .contactinform{
+}
+
+.contactinform {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     height: auto;
     padding-top: 20px;
-    gap: 24px; 
-    flex: 1; /* Takes available space */
+    gap: 24px;
+    flex: 1;
+    /* Takes available space */
     min-width: 300px;
 }
-  
-.office{
+
+.office {
     font-size: 18px;
     color: #4B5563;
     font-weight: 600;
 }
-.job{
+
+.job {
     padding: 16px 32px;
     font-size: 14px;
     line-height: 20px;
     border: solid 0.5px #000;
     background: #FFFFFF;
 }
-.job:hover{
+
+.job:hover {
     background: #000;
     color: #FFFFFF;
     transition-duration: 0.5s;
 }
-.contacttxt{
+
+.contacttxt {
     font-size: 14px;
     color: #6b7280;
 }
-.docdetails{
+
+.docdetails {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin: 0px 29px;
 
 }
-.docdet{
+
+.docdet {
     padding: 27px 27px;
-  
-}
-
-.img-fluid{
-    max-width: 17rem; 
-
 
 }
-.docimg{
-    min-width: 17rem; 
+
+.img-fluid {
+    max-width: 17rem;
+
 
 }
-.doctorname{
+
+.docimg {
+    min-width: 17rem;
+
+}
+
+.doctorname {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 30px;
     font-weight: 500;
     color: #374151;
-    
+
 }
-.verified img{
- width: 20px;
- font-size: small;
+
+.verified img {
+    width: 20px;
+    font-size: small;
 }
-.year{
+
+.year {
     border-radius: 9999px;
     font-size: 12px;
-    color:#4B5563;
+    color: #4B5563;
     background-color: transparent;
     border: .5px solid #e5e7eb;
     padding: 2px 15px;
 }
-.about{
+
+.about {
     font-size: 14px;
     font-weight: 500;
     text-align: center;
 }
-.details{
+
+.details {
     font-size: 14px;
     line-height: 20px;
 }
-.apointfee{
+
+.apointfee {
     font-size: 16px;
     color: #4B5563;
     margin-top: 14px;
@@ -538,6 +610,7 @@ p {
     font-weight: 500;
 
 }
+
 .date-btn.active {
     background-color: #5F6FFF;
     color: white;
@@ -553,18 +626,19 @@ p {
     font-size: 14px;
     line-height: 20px;
 }
+
 .time-slot-container {
     max-width: 100%;
-    overflow-x: auto; 
-    white-space: nowrap; 
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 5px 0;
-    scrollbar-width: none; 
+    scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
 .time-slot-wrapper {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .time-slot-container::-webkit-scrollbar {
@@ -576,7 +650,8 @@ p {
     padding: 8px 16px;
     border-radius: 20px;
     background: white;
-    color: #949494;;
+    color: #949494;
+    ;
     white-space: nowrap;
     font-size: 14px;
     font-weight: 300;
@@ -588,69 +663,81 @@ p {
     color: white;
     border: none;
 }
-.booking{
+
+.booking {
     margin: 0px 24px 0px 334px;
 }
-.slot{
+
+.slot {
     font-size: 16px;
     color: #565656;
     font-weight: 500;
 
 }
-.profile{
+
+.profile {
     display: flex;
     flex-direction: column;
     margin: 20px 39px;
 
 }
-.profiledetails{
+
+.profiledetails {
     display: flex;
     flex-direction: column;
     width: 45%;
     padding-top: 20px;
 }
-.profiledetails img{
-    width:144px;
+
+.profiledetails img {
+    width: 144px;
     max-width: 100%;
     height: auto;
 }
-.profilename{
+
+.profilename {
     font-size: 30px;
     font-weight: 500;
-    color:#262626
+    color: #262626
 }
-.contactinf{
+
+.contactinf {
     font-size: 14px;
     color: #4b5563;
 }
-.address{
+
+.address {
     display: grid;
     grid-template-columns: repeat(2, 3fr);
-    grid-template-rows: repeat(3, 25px); 
+    grid-template-rows: repeat(3, 25px);
     gap: 10px;
     width: 255px;
     font-size: 14px;
     font-weight: 500;
-    
-   
+
+
 }
-.textblue{
-   font-weight: normal; 
-   color: #007bff;
+
+.textblue {
+    font-weight: normal;
+    color: #007bff;
 }
-.textgray{
+
+.textgray {
     font-weight: normal;
     color: #6b7280;
 }
-.basicinf{
+
+.basicinf {
     color: #6b7280;
     font-size: 14px;
 
 }
-.basicdetails{
+
+.basicdetails {
     display: grid;
-    grid-template-columns: repeat(2,3fr);
-    grid-template-rows: repeat(2,25px);
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(2, 25px);
     gap: 10px;
     width: 255px;
     color: #6b7280;
@@ -658,24 +745,28 @@ p {
     padding-top: 14px;
 
 }
-.basictext{
+
+.basictext {
     font-weight: 500;
     color: #4b5563;
 }
-.editbtn{
-    padding:8px 32px;
+
+.editbtn {
+    padding: 8px 32px;
     border-radius: 9999px;
     width: 90px;
     background: transparent;
-    border :.5px solid #5F6FFF;
+    border: .5px solid #5F6FFF;
     font-size: 14px;
 
 }
-.editbtn:hover{
+
+.editbtn:hover {
     background-color: #5F6FFF;
-    color:#FFFFFF
+    color: #FFFFFF
 }
-.login{
+
+.login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -683,93 +774,114 @@ p {
     margin: 20px 39px 0px 39px;
 
 }
-.loginform{
+
+.loginform {
     display: flex;
     flex-direction: column;
     min-width: 384px;
     padding: 32px;
-    gap:12px;
+    gap: 12px;
     align-items: flex-start;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 
-            0px 2px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+        0px 2px 4px rgba(0, 0, 0, 0.06);
     border-radius: 12px;
     font-size: 14px;
     color: #5E5E5E;
     height: auto;
 
 }
-.inputvalue{
+
+.inputvalue {
     width: 100%;
     border-radius: 4px;
-    border:1px solid #dadada;
+    border: 1px solid #dadada;
     padding: 6px;
     margin-top: 4px;
 }
-.w-full{
+
+.w-full {
     width: 100%;
 }
-.createacc{
+
+.createacc {
     font-size: 24px;
     line-height: 32px;
     font-weight: 600;
 }
-.createaccbtn{
+
+.createaccbtn {
     border-radius: 4px;
     background-color: #5F6FFF;
     color: #FFFFFF;
     border: none;
     font-size: 16px;
 }
-.myappoiment{
+
+.a5 {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    height: auto;
+    padding: 80px 0px;
+}
+
+.myappoiment {
     margin: 46px 39px;
 }
-.appointments{
-    font-size:18px ;
+
+.appointments {
+    font-size: 18px;
     font-weight: 500;
     color: #4b5563;
     padding-bottom: 12px;
     border-bottom: 1px solid #F1F2F4;
 }
-.paybtn{
-    color:#696969;
-    border:1px solid #E5E7EB;
+
+.paybtn {
+    color: #696969;
+    border: 1px solid #E5E7EB;
     font-size: 14px;
     border-radius: 4px;
     padding: 8px 0px;
 }
-.paybtn:hover{
-    color:#ffffff;
+
+.paybtn:hover {
+    color: #ffffff;
     background: #5F6FFF;
 
 }
 
-.cancelbtn{
-    color:#696969;
-    border:1px solid #E5E7EB;
+.cancelbtn {
+    color: #696969;
+    border: 1px solid #E5E7EB;
     font-size: 14px;
     border-radius: 4px;
     padding: 8px 25px;
-    
+
 }
-.cancelbtn:hover{
-    color:#ffffff;
+
+.cancelbtn:hover {
+    color: #ffffff;
     background: #DC2626;
 }
-.create{
+
+.create {
     background-color: #5F6FFF;
     border-radius: 9999px;
     border: none;
     color: #ffffff;
-    padding:12px 32px;
+    padding: 12px 32px;
     font-size: 14px;
     font-weight: 300;
 }
-.specialitybrowse{
+
+.specialitybrowse {
     margin: 15px 10px;
     color: #4B5563;
     opacity: 1;
 
 }
+
 .footer {
     background-color: #ffffff;
     margin: 160px 80px 20px 80px;
@@ -805,25 +917,79 @@ p {
 }
 
 @media (min-width: 1200px) {
-    .aboutimg img {
-        max-width: 360px; 
+    .aboutimg {
+        max-width: 360px;
     }
-    .contactimage img{
-        max-width: 360px; 
+
+    .contactimg {
+        max-width: 360px;
     }
-    .contactdetails{
+
+    .contactdetails {
         margin-bottom: 112px;
+    }
+
+    .booking {
+        margin: 0px 24px 0px 334px;
+    }
+
+    .appointmentbtn {
+        align-items: center;
+    }
+
+    .createaccount {
+        gap: 0px
+    }
+
+
+}
+
+@media (max-width: 992px) {
+    .booking {
+        margin: 0px 24px 0px 186px;
+    }
+
+    .a2 {
+
+        padding: 0px 0px;
+    }
+
+    .createaccount {
+        gap: 0px
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* centers links horizontally */
+    }
+
+    .nav-link {
+        text-align: center;
+        width: 100%;
+        /* optional, if you want full-width click area */
+    }
+
+    .nav-link.active-link::after {
+        display: none;
+        /* hide underline */
     }
 }
 
 @media (max-width: 768px) {
     .a1 {
-        flex-direction: column;
         align-items: center;
         text-align: center;
         justify-content: center;
     }
-    .groupprofile{
+
+    .a2 {
+
+        padding: 0px 0px;
+    }
+
+    .groupprofile {
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -832,7 +998,6 @@ p {
     .txt {
         font-size: 2rem;
         text-align: center;
-
     }
 
     .a4 {
@@ -840,30 +1005,89 @@ p {
         text-align: center;
         justify-content: center;
     }
-    .appointmentbtn{
-        text-align: center;
-        justify-content: center;
-        padding-top: 20px;
-    }
+
+        .appointmentbtn {
+          width: 100%;
+          max-width: 90%;
+          padding: 10px 20px;
+          font-size: 13px;
+        }
+      
+        .appointmentbtn img {
+          width: 16px;
+          height: auto;
+        }
+    
 
     .a3 {
         margin-top: 20px;
         width: 100%;
     }
-    .aboutpara{
-      width: 100% !important; 
+
+    .aboutpara {
+        width: 100% !important;
     }
-   
+
     .contactdetails {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
     }
-    
-    .contactimage, .contactinform {
-        width: 100%; 
+
+    .contactimage,
+    .contactinform {
+        width: 100%;
     }
-    .booking{
-        margin: 0px 24px 0px 29px;;
+
+    .booking {
+        margin: 0px 24px 0px 29px;
+    }
+
+    .doctors {
+        align-items: center;
+        gap: 16px;
+    }
+
+    .docimg {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .docdet {
+        padding: 20px;
+    }
+
+    .createaccount {
+        gap: 0px
+    }
+
+    .speciality {
+        padding: 0px 0px;
+    }
+
+}
+
+@media (max-width: 578px) {
+    .doctor-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .a2 {
+
+        padding: 0px 0px;
+    }
+
+    .createaccount {
+        gap: 0px
+    }
+
+    .speciality {
+        padding: 0px 0px;
     }
 }
 
@@ -871,12 +1095,10 @@ p {
     .txt {
         font-size: 1.5rem;
         text-align: center;
-
     }
 
     .a2 {
         margin: 10px;
-        
     }
 
     .a3 {
@@ -888,9 +1110,16 @@ p {
         text-align: center;
         justify-content: center;
     }
-    .appointmentbtn{
-        text-align: center;
-        justify-content: center;
-        padding-top: 20px;
+
+    .appointmentbtn {
+        align-items: start;
+    }
+
+    .createaccount {
+        gap: 0px
+    }
+
+    .speciality {
+        padding: 0px 0px;
     }
 }

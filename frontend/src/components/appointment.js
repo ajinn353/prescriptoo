@@ -11,11 +11,11 @@ function Appointment() {
 
   const [times, setTimes] = useState([]);
   const [selectedTime, setSelectedTime] = useState("");
-  const [selectedDate, setSelectedDate] = useState(""); 
-  const {id} = useParams();
-  const [doctor,setDoctors] = useState("");
-  const [images ,setImages] = useState([]);
-  
+  const [selectedDate, setSelectedDate] = useState("");
+  const { id } = useParams();
+  const [doctor, setDoctors] = useState("");
+  const [images, setImages] = useState([]);
+
 
   const generateDates = () => {
     const today = new Date();
@@ -23,9 +23,9 @@ function Appointment() {
       const date = new Date();
       date.setDate(today.getDate() + i);
       return {
-        day: date.toLocaleString("en-US", { weekday: "short" }).toUpperCase(), 
+        day: date.toLocaleString("en-US", { weekday: "short" }).toUpperCase(),
         date: date.getDate(),
-        fullDate: date.toISOString().split("T")[0], 
+        fullDate: date.toISOString().split("T")[0],
       };
     });
   };
@@ -34,24 +34,24 @@ function Appointment() {
 
   useEffect(() => {
     if (!selectedDate && dates.length > 0) {
-      setSelectedDate(dates[0].fullDate); 
+      setSelectedDate(dates[0].fullDate);
     }
-  }, [dates,selectedDate]); 
+  }, [dates]);
 
   useEffect(() => {
     generateTimeSlots();
-  }, [selectedDate]); 
+  }, [selectedDate]);
 
   useEffect(() => {
     if (times.length > 0) {
-      setSelectedTime(times[0]); 
+      setSelectedTime(times[0]);
     }
-  }, [times]); 
+  }, [times]);
 
   const generateTimeSlots = () => {
     const now = new Date();
     let startHour = 10;
-    const endHour = 21; 
+    const endHour = 21;
 
     const selectedDay = new Date(selectedDate);
     const isToday = selectedDay.toDateString() === now.toDateString();
@@ -62,7 +62,7 @@ function Appointment() {
         if (tomorrowDate) setSelectedDate(tomorrowDate);
         startHour = 10;
       } else if (now.getHours() >= 10) {
-        startHour = now.getHours() + 1; 
+        startHour = now.getHours() + 1;
       }
     }
 
@@ -75,57 +75,58 @@ function Appointment() {
     setTimes(newTimes);
   };
 
-  useEffect (()=>{
+  useEffect(() => {
     fetch(`https://prescriptoo-xhav.onrender.com/api/doctors/${id}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data)=>{
-      setDoctors(data)
-    })
-    .catch((error)=>{
-      console.error("Error fetching doctor:",error); 
-    });
-  },[id])
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      }).then((data) => {
+        setDoctors(data)
+
+      })
+      .catch((error) => {
+        console.error("Error fetching doctor:", error);
+
+      });
+  }, [id])
 
   const handleBooking = async () => {
     const isLogin = localStorage.getItem("islogin");
-  
-  if (isLogin !== "true") {
-    toast.warn("Login to book an appointment.");
-    return;
-  }
 
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (!user || !user._id) {
-    toast.warn("Please log in to book an appointment.");
-    return;
-  }
-  
+    if (isLogin !== "true") {
+      toast.warn("Login to book an appointment.");
+      return;
+    }
+
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || !user._id) {
+      toast.warn("Please log in to book an appointment.");
+      return;
+    }
+
     if (!selectedDate || !selectedTime) {
       toast.warn("Please select a date and time.");
       return;
     }
-  
+
     const appointmentData = {
       userId: user._id,
       doctorId: id,
       date: selectedDate,
       time: selectedTime,
     };
-  
+
     try {
       const response = await fetch("https://prescriptoo-xhav.onrender.com/api/book-appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
         toast.success(result.message || "Appointment booked successfully!");
       } else {
@@ -137,59 +138,75 @@ function Appointment() {
     }
   };
 
-    useEffect(() => {
-      const filename = "verified.svg";
-      const name = filename.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-      const imageUrl = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
-      
-      setImages({ [name]: imageUrl });
-    }, []);
-  
+  useEffect(() => {
+    const filename = "verified.svg";
+    const name = filename.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
+    const imageUrl = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
+
+    setImages({ [name]: imageUrl });
+  }, []);
+
 
 
 
 
   return (
-    <div className="container">
+    <div className="container ">
       <Header />
 
-      <div className="container my-4">
-        <div className='docdetails d-flex'>
-          <div className="row g-3 ">
-            <div className="col-md-3">
-              <div className=" text-center rounded docimg" style={{ backgroundColor: '#5F6FFF' }}>
-                <img src={doctor.image} className="img-fluid rounded" alt="Doctor" />
-              </div>
+      <div className="container my-4 appointt">
+        <div className="row g-3 align-items-stretch">
+
+          {/* Doctor Image */}
+          <div className="col-md-3 col-12">
+            <div className="text-center rounded h-100 d-flex align-items-center justify-content-center" style={{ backgroundColor: '#5F6FFF' }}>
+              {doctor.image && (
+                <img
+                  src={doctor.image}
+                  className="img-fluid rounded"
+                  alt="Doctor"
+                  style={{objectFit: 'contain', width: '100%' }}
+                />
+              )}
             </div>
-
-            <div className="col-md-9 h-100 d-flex">
-              <div className="border rounded w-100 h-100 d-flex flex-column docdet">
-                <div className="doctorname">
-                  {doctor.name}
-                  <span className='verified'>
-                    <img src = {images.verified} alt= 'logo'></img>
-                  </span>
-                </div>
-                <p className="mb-1 text-muted d-flex gap-2">
-                  MBBS - {doctor.category} <button className="year ">{doctor.experience} Year</button>
-                </p>
-
-                <p className="mt-3" style={{ fontSize: "14px", fontWeight: "500" }}>
-                  About
-                </p>
-                <p className="details mt-2">
-                  {doctor.about}
-                </p>
-
-                <p className="apointfee">
-                  Appointment fee: <span className="text-dark">${doctor.appointmentFee}</span>
-                </p>
-              </div>
-            </div>
-
           </div>
+
+          {/* Doctor Details */}
+          <div className="col-md-9 col-12">
+            <div className="border rounded h-100 d-flex flex-column p-3">
+              <div className="doctorname mb-2 d-flex align-items-center">
+                <span>{doctor.name}</span>
+                <span className="verified ms-2">
+                  {images.verified && (
+                    <img src={images.verified} alt="Verified" style={{ height: '20px' }} />
+                  )}
+                </span>
+              </div>
+
+              <p className="mb-2 text-muted d-flex align-items-center gap-2 flex-wrap">
+                MBBS - {doctor.category}
+                <button className="year">{doctor.experience} Year</button>
+              </p>
+
+              <p className="mt-3" style={{ fontSize: "14px", fontWeight: "500" }}>
+                About
+              </p>
+
+              <p className="details mt-2" style={{ flexGrow: 1 }}>
+                {doctor.about}
+              </p>
+
+              <p className="apointfee mt-auto">
+                Appointment fee: <span className="text-dark">${doctor.appointmentFee}</span>
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
+
+
+
 
       <div className="container ">
         <div className='booking'>
@@ -198,8 +215,8 @@ function Appointment() {
           <div className="d-flex gap-3 mt-4">
             {dates.map((d) => (
               <button
-                key={d.fullDate} 
-                className={`date-btn ${selectedDate === d.fullDate ? "active" : ""}`} 
+                key={d.fullDate}
+                className={`date-btn ${selectedDate === d.fullDate ? "active" : ""}`}
                 onClick={() => setSelectedDate(d.fullDate)}
               >
                 {d.day} <br /> {d.date}

@@ -57,12 +57,25 @@ const DoctorList = () => {
     <div className="container">
       <Header />
       <div className="doctorlist">
-      <div className="specialitybrowse">Browse through the doctors specialist.</div>
+        <div className="specialitybrowse">Browse through the doctors specialist.</div>
 
         <div className="container d-flex flex-column flex-md-row gap-3">
           {/* Sidebar */}
           <div className="d-flex flex-column align-items-center align-items-md-start" style={{ maxWidth: "180px" }}>
-            <div className="d-md-block d-flex flex-wrap align-items-start gap-2">
+            <select
+              className="form-select d-md-none mb-3"
+              value={selectedSpecialty}
+              onChange={(e) => setSelectedSpecialty(e.target.value)}
+            >
+              <option value="All">All Specialties</option>
+              {specialties.map((specialty) => (
+                <option key={specialty} value={specialty}>
+                  {specialty}
+                </option>
+              ))}
+            </select>
+
+            <div className="d-none d-md-block d-flex flex-wrap align-items-start gap-2">
               {specialties.map((specialty) => (
                 <button
                   key={specialty}
@@ -110,7 +123,7 @@ const DoctorList = () => {
       </div>
       <Footer />
     </div>
-  );
+  )
 };
 
 export default DoctorList;

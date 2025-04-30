@@ -8,7 +8,6 @@ function Myappointment() {
   const [canceledAppointments, setCanceledAppointments] = useState({});
 
 
-
   useEffect(() => {
     setLoading(true);
   

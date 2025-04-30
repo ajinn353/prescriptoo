@@ -8,6 +8,8 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [islogin, setIsLogin] = useState(false)
   const [images, setImages] = useState([]);
+  const [userImage, setUserImage] = useState(null);
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,6 +26,37 @@ function Header() {
 
     setImages(imageMap);
   }, []);
+
+  useEffect(() => {
+    const userId = localStorage.getItem('userId');
+
+    if (!userId) {
+      console.warn('No user ID in localStorage');
+      return;
+    }
+
+    fetch("https://prescriptoo-xhav.onrender.com/api/user", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "getData", userId }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.image && data.image.data) {
+          const base64Image = `data:${data.image.contentType};base64,${data.image.data}`;
+          setUserImage(base64Image);
+        } else {
+          setUserImage(images.profile);
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching user:', err);
+        setUserImage(images.profile);
+      });
+  }, [images.profile]);
+
+
+
 
   const handleLogout = () => {
     localStorage.removeItem("islogin");
@@ -100,59 +133,27 @@ function Header() {
 
         {islogin ? (
           <div className="d-flex align-items-center gap-3">
-            <div className="dropdown">
-              <button
-                className="btn dropdown-toggle border-0 p-0"
-                type="button"
-                id="userDropdown"
-                data-bs-toggle="dropdown"
-              >
-                <img
-                  src={images.profile}
-                  alt="User Profile"
-                  className="rounded-circle"
-                  style={{
-                    width: "32px",
-                    height: "32px",
-                    backgroundColor: "#F0F0FF",
-                    cursor: "pointer",
-                  }}
-                />
-              </button>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="userDropdown"
-              >
-                <li>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => navigate("/profile")}
-                  >
-                    My Profile
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => navigate("/myappointment")}
-                  >
-                    My Appointments
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" onClick={handleLogout}>
-                    Logout
-                  </button>
-                </li>
-              </ul>
+            <div
+              className="dropdown"
+            >
+              <div className="dropdown">
+                <button className="btn dropdown-toggle border-0 p-0" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                  <img src={userImage || images.profile}
+                    alt="User Profile" className="rounded-circle" style={{ width: "32px", height: "32px", backgroundColor: "#F0F0FF", cursor: "pointer" }} />
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li><button className="dropdown-item" onClick={() => navigate('/profile')}> My Profile</button></li>
+                  <li><button className="dropdown-item" onClick={() => navigate('/myappointment')}>My Appointments</button></li>
+                  <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
+                </ul>
+              </div>
             </div>
           </div>
         ) : (
           <>
-            <button className="create" onClick={() => navigate("/login")}>
-              create account
-            </button>
+            <button className=' create' onClick={() => navigate("/login")}>create account</button>
           </>
+
         )}
 
       </nav>
