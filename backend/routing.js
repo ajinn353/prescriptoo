@@ -304,20 +304,9 @@ Routing.post("/assets", upload.single("image"), async (req, res) => {
 
 
 
-Routing.get('/api/assets', async (req, res) => {
-  try {
-    const assets = await AssetsModel.find({}, 'name'); // Only return the 'name' field
-    res.json(assets);
-  } catch (error) {
-    console.error('Error fetching assets:', error);
-    res.status(500).send('Server Error');
-  }
-});
-
-
 Routing.get('/assets', async (req, res) => {
   try {
-    const assets = await AssetsModel.find({}, 'name');  // Fetch only the "name" field
+    const assets = await AssetsModel.find({}, 'name'); // Fetch only the "name" field
 
     if (!assets || assets.length === 0) {
       return res.status(404).send("No assets found");

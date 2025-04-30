@@ -53,7 +53,7 @@ function Header() {
         console.error('Error fetching user:', err);
         setUserImage(images.profile);
       });
-  }, [images.profile]);
+  }, [images]);
 
 
 
