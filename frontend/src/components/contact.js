@@ -8,7 +8,7 @@ function Contact() {
   useEffect(() => {
     const filename = "contactimage.png";
     const name = filename.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-    const imageUrl = `https://prescriptoo-xhav.onrender.com/assets/${name}`;
+    const imageUrl = `https://prescriptoo-xhav.onrender.com/api/assets/${name}`;
 
     setImageUrl(imageUrl); // Directly set the image URL
   }, []);
