@@ -9,7 +9,7 @@ function TopDoctors() {
   useEffect(() => {
     async function fetchDoctors() {
       try {
-        const res = await fetch('http://localhost:3300/api/doctors');
+        const res = await fetch('https://prescriptoo-xhav.onrender.com/api/doctors');
         const data = await res.json();
         setDoctors(data || []);
       } catch (err) {

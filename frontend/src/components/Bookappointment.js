@@ -10,12 +10,12 @@ function Bookappointment() {
 
     async function fetchAssets() {
       try {
-        const res = await fetch('http://localhost:3300/api/assets');
+        const res = await fetch('https://prescriptoo-xhav.onrender.com/api/assets');
         const data = await res.json();
         const assetMap = {};
         for (const asset of data) {
           const filename = asset.name.toLowerCase().replace(/\s+/g, '').replace(/\.[^/.]+$/, '');
-          assetMap[filename] = `http://localhost:3300/api/assets/${filename}`;
+          assetMap[filename] = `https://prescriptoo-xhav.onrender.com/api/assets/${filename}`;
         }
         setAssets(assetMap);
       } catch (err) {
